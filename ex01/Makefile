@@ -6,11 +6,13 @@
 #    By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/03 20:30:42 by hyungdki          #+#    #+#              #
-#    Updated: 2023/11/11 13:56:31 by hyungdki         ###   ########.fr        #
+#    Updated: 2023/11/11 16:36:05 by hyungdki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	megaphone.cpp
+SRCS =	main.cpp \
+		Contact.cpp \
+		PhoneBook.cpp
 		
 OBJS = 	${SRCS:.cpp=.o}
 
@@ -20,7 +22,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = megaphone
+NAME = phonebook
 
 ${NAME} : ${TOTAL_OBJS}
 	${CC} ${CFLAGS} ${TOTAL_OBJS} -o $@
