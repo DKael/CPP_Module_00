@@ -6,11 +6,12 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:26:45 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/13 19:58:16 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/11/13 22:13:43 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdio>
+#include <cstdlib>
 #include <iostream>
 #include <iomanip>
 #include <string>
