@@ -6,7 +6,7 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:26:48 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/11 19:26:49 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/11/13 19:09:05 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,14 @@ void PhoneBook::print_list()
 {
 	std::string tmp;
 
-	std::cout << std::setw(10) << "index" << "|"
-	<< std::setw(10) << "first name" << "|"
-	<< std::setw(10) << "last name" << "|" 
-	<< std::setw(10) << "nickname\n";
+	std::cout << "-------------------------------------------\n";
+	std::cout << std::setw(10) << "index"
+			  << "|"
+			  << std::setw(10) << "first name"
+			  << "|"
+			  << std::setw(10) << "last name"
+			  << "|"
+			  << std::setw(10) << "nickname" << '\n';
 
 	for (int i = 0; i < size; i++)
 	{
@@ -55,6 +59,7 @@ void PhoneBook::print_list()
 		else
 			std::cout << std::setw(10) << tmp << '\n';
 	}
+	std::cout << "-------------------------------------------\n";
 }
 
 Contact PhoneBook::get_contact(int index)
@@ -62,7 +67,7 @@ Contact PhoneBook::get_contact(int index)
 	return list[index];
 }
 
-int	PhoneBook::get_size()
+int PhoneBook::get_size()
 {
 	return size;
 }

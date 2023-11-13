@@ -6,7 +6,7 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:26:45 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/11 20:04:42 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/11/13 19:37:41 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int main()
 	PhoneBook pb;
 	Contact tmp;
 	std::string select;
-	std::string	idx_input;
-	int	idx;
+	std::string idx_input;
+	int idx;
 
 	while (1)
 	{
@@ -49,14 +49,29 @@ int main()
 				continue;
 			}
 			pb.print_list();
-			std::cout << "Select contact index : ";
-			std::getline(std::cin, idx_input);
-			idx = 1;
-			while (1 > idx || idx > 8 || idx > pb.get_size())
+			while (true)
 			{
-				std::cout << "Index out of range!\n";
 				std::cout << "Select contact index : ";
 				std::getline(std::cin, idx_input);
+				if (std::cin.eof())
+				{
+					std::cout << "\nInvalid index number!\n";
+					std::cin.clear();
+					std::clearerr(stdin);
+					continue;
+				}
+				else if (idx_input.find_first_not_of("0123456789") != std::string::npos)
+				{
+					std::cout << "Input is not a number!\n";
+					continue;
+				}
+				idx = std::atoi(idx_input.c_str());
+				if (!(1 <= idx && idx <= pb.get_size()))
+				{
+					std::cout << "Index out of range!\n";
+					continue;
+				}
+				break;
 			}
 			pb.get_contact(idx - 1).print_contact();
 		}
@@ -66,7 +81,15 @@ int main()
 			return 0;
 		}
 		else
+		{
+			if (std::cin.eof())
+			{
+				std::cout << '\n';
+				std::cin.clear();
+				std::clearerr(stdin);
+			}
 			std::cout << "Invalid command!\n";
+		}
 	}
 }
 
@@ -74,10 +97,21 @@ std::string get_input(std::string to_print)
 {
 	std::string input;
 
+	if (std::cin.eof())
+	{
+		std::cout << '\n';
+		std::cin.clear();
+		std::clearerr(stdin);
+	}
 	std::cout << to_print;
 	std::getline(std::cin, input);
 	while (input.length() == 0 || is_blank(input) == true)
 	{
+		if (std::cin.eof())
+		{
+			std::cin.clear();
+			std::clearerr(stdin);
+		}
 		std::cout << "Empty field not allowed!\n";
 		std::cout << to_print;
 		std::getline(std::cin, input);
@@ -87,7 +121,7 @@ std::string get_input(std::string to_print)
 
 bool is_blank(std::string str)
 {
-	int	size;
+	int size;
 
 	size = str.size();
 	for (int i = 0; i < size; i++)

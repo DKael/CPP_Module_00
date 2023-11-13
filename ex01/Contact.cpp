@@ -6,7 +6,7 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:26:54 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/11 19:26:54 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:41:50 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,11 @@ void Contact::set_darkest_secret(std::string _darkest_secret)
 
 void Contact::print_contact()
 {
+	std::cout << "-------------------- contact info --------------------\n";
 	std::cout << "first name : " << first_name << '\n';
 	std::cout << "last name : " << last_name << '\n';
 	std::cout << "nickname : " << nickname << '\n';
 	std::cout << "phone number : " << phone_number << '\n';
 	std::cout << "darkest secret : " << darkest_secret << '\n';
+	std::cout << "------------------------------------------------------\n";
 }
