@@ -6,10 +6,11 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:26:45 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/13 19:37:41 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/11/13 19:58:16 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstdio>
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -57,7 +58,7 @@ int main()
 				{
 					std::cout << "\nInvalid index number!\n";
 					std::cin.clear();
-					std::clearerr(stdin);
+					clearerr(stdin);
 					continue;
 				}
 				else if (idx_input.find_first_not_of("0123456789") != std::string::npos)
@@ -65,7 +66,7 @@ int main()
 					std::cout << "Input is not a number!\n";
 					continue;
 				}
-				idx = std::atoi(idx_input.c_str());
+				idx = atoi(idx_input.c_str());
 				if (!(1 <= idx && idx <= pb.get_size()))
 				{
 					std::cout << "Index out of range!\n";
@@ -86,7 +87,7 @@ int main()
 			{
 				std::cout << '\n';
 				std::cin.clear();
-				std::clearerr(stdin);
+				clearerr(stdin);
 			}
 			std::cout << "Invalid command!\n";
 		}
@@ -101,7 +102,7 @@ std::string get_input(std::string to_print)
 	{
 		std::cout << '\n';
 		std::cin.clear();
-		std::clearerr(stdin);
+		clearerr(stdin);
 	}
 	std::cout << to_print;
 	std::getline(std::cin, input);
@@ -110,7 +111,7 @@ std::string get_input(std::string to_print)
 		if (std::cin.eof())
 		{
 			std::cin.clear();
-			std::clearerr(stdin);
+			clearerr(stdin);
 		}
 		std::cout << "Empty field not allowed!\n";
 		std::cout << to_print;
