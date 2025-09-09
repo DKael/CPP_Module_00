@@ -17,24 +17,24 @@ CPP Module 00는 42서울 C++ 커리큘럼의 출발점으로, C 방식의 절�
 ## 3️⃣ Exercise별 구현 사항
 
 ### ex00 — Megaphone
-	•	기능: 프로그램 인자로 받은 문자열을 대문자로 변환하여 출력
-	•	주요 포인트: argc/argv 처리, std::toupper/문자 순회, 인자 없을 때의 메시지 처리
-	•	예외/경계: 공백/특수문자 보존 여부, 로케일 영향 최소화
+* 기능: 프로그램 인자로 받은 문자열을 대문자로 변환하여 출력
+* 주요 포인트: argc/argv 처리, std::toupper/문자 순회, 인자 없을 때의 메시지 처리
+* 예외/경계: 공백/특수문자 보존 여부, 로케일 영향 최소화
 
 ### ex01 — My Awesome PhoneBook
-	•	기능: 최대 8개 Contact를 저장/검색하는 간단 전화번호부(순환 저장)
-	•	구조: Contact와 PhoneBook 두 클래스로 캡슐화
-	  -	Contact: 이름/별명/전화/비밀 필드 + 접근자
-	  -	PhoneBook: 추가(ADD), 요약/상세 조회(SEARCH), 종료(EXIT)
-	•	UI/출력: 요약 테이블 폭 고정(std::setw), 길면 말줄임 처리
-	•	에러 처리: 비어있는 입력/인덱스 범위 오류 처리, 입력 스트림 상태 복구
+* 기능: 최대 8개 Contact를 저장/검색하는 간단 전화번호부(순환 저장)
+* 구조: Contact와 PhoneBook 두 클래스로 캡슐화
+	- Contact: 이름/별명/전화/비밀 필드 + 접근자
+	- PhoneBook: 추가(ADD), 요약/상세 조회(SEARCH), 종료(EXIT)
+* UI/출력: 요약 테이블 폭 고정(std::setw), 길면 말줄임 처리
+* 에러 처리: 비어있는 입력/인덱스 범위 오류 처리, 입력 스트림 상태 복구
 
 ### ex02 — Account
-	•	기능: 은행 계좌 클래스를 구현하고, 입금/출금 시도들을 로그와 함께 출력
-	•	정적 멤버: nbAccounts, totalAmount, totalNbDeposits, totalNbWithdrawals
-	•	인스턴스 멤버: _amount, _nbDeposits, _nbWithdrawals, _accountIndex
-	•	로깅 형식: 타임스탬프 [YYYYMMDD_HHMMSS] + 액션별 포맷 일치
-	•	제약: 음수 출금 거절, 모든 상태 변화가 정확한 카운터로 집계되도록 유지
+* 기능: 은행 계좌 클래스를 구현하고, 입금/출금 시도들을 로그와 함께 출력
+* 정적 멤버: nbAccounts, totalAmount, totalNbDeposits, totalNbWithdrawals
+* 인스턴스 멤버: _amount, _nbDeposits, _nbWithdrawals, _accountIndex
+* 로깅 형식: 타임스탬프 [YYYYMMDD_HHMMSS] + 액션별 포맷 일치
+* 제약: 음수 출금 거절, 모든 상태 변화가 정확한 카운터로 집계되도록 유지
 
 ---
 
