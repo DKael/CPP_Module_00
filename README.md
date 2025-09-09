@@ -78,7 +78,7 @@ make            # 모든 과제별 바이너리 빌드
 make re / clean # 재빌드 / 정리
 ```
 
-### ex00 — Megaphone
+### ex00
 
 bash
 ```
@@ -88,7 +88,7 @@ bash
 # 출력: * LOUD AND UNBEARABLE FEEDBACK NOISE *
 ```
 
-### ex01 — PhoneBook
+### ex01
 
 bash
 ```
@@ -98,7 +98,7 @@ bash
 # SEARCH → 인덱스 입력 후 상세 보기
 ```
 
-### ex02 — Account
+### ex02
 
 bash
 ```
